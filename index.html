@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>adaboost</title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script src="ada_boost.js" type="text/javascript" charset="utf-8"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="all">
+
+    </style>
+  </head>
+  <body>
+    <div id="form">
+      <label for="function">関数:</label><input id="function" name="function" type="text" value="sin(0.75 * PI * x)"/><br>
+      <label for="x_min">xの範囲</label><input id="x_min" name="x_min" type="number" value="-2"/>〜<input id="x_max" name="x_max" type="number" value="2" /><br>
+      <label for="y_min">yの範囲</label><input id="y_min" name="y_min" type="number" value="-2" />〜<input id="y_max" name="y_max" type="number" value="2" /><br>
+      <label for="ab_length">AdaBoostの学習回数:</label><input id="ab_length" name="" type="number" value="500" /><br>
+      <button type="submit" onclick="learn()">学習</button><br>
+      <label for="test_length">判別の精度:</label><input type="range" id="h_rate" max="1" min="0" value="1" step="0.01" onchange="test()" /><br>
+    </div>
+    <div id="canvas" style="width:320px; height:320px;"></div>
+    <div id="error"></div>
+  </body>
+</html>
