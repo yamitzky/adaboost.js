@@ -119,7 +119,7 @@ AdaBoost = (function() {
 
   AdaBoost.prototype.classify = function(x, _T) {
     var result = 0.0;
-    var T = _T ? _T : this.linear_devices.length;
+    var T = (_T !== undefined) ? _T : this.linear_devices.length;
     for (var t = 0; t < T; t++) {
       result += this.alpha[t] * this.linear_devices[t].calc(x);
     }
