@@ -120,6 +120,7 @@ AdaBoost = (function() {
   AdaBoost.prototype.classify = function(x, _T) {
     var result = 0.0;
     var T = (_T !== undefined) ? _T : this.linear_devices.length;
+    T = Math.max(Math.min(Math.round(T), this.linear_devices.length), 1);
     for (var t = 0; t < T; t++) {
       result += this.alpha[t] * this.linear_devices[t].calc(x);
     }
